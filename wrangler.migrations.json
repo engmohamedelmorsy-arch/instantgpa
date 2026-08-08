@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "instantgpa9999999999",
+  "compatibility_date": "2026-08-06",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "site-creator-d1",
+      "database_id": "d00f5ed2-619d-4989-a14e-638b33af1ce2",
+      "migrations_dir": "drizzle"
+    }
+  ]
+}

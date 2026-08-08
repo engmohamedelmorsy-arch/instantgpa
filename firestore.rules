@@ -1,0 +1,64 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function hasActivePremium(uid) {
+      return isOwner(uid)
+        && exists(/databases/$(database)/documents/entitlements/$(uid))
+        && get(/databases/$(database)/documents/entitlements/$(uid)).data.status == 'active'
+        && get(/databases/$(database)/documents/entitlements/$(uid)).data.source in ['paypal', 'owner'];
+    }
+
+    // User-controlled profile and academic context.
+    match /users/{uid} {
+      allow read, create, update: if hasActivePremium(uid);
+      allow delete: if false;
+    }
+
+    // Subscription state is readable by its user but server-managed.
+    match /entitlements/{uid} {
+      allow read: if isOwner(uid);
+      allow write: if false;
+    }
+
+    // Server-created transcript scan jobs.
+    match /scanJobs/{jobId} {
+      allow read: if signedIn() && resource.data.uid == request.auth.uid;
+      allow write: if false;
+    }
+
+    // Server-created usage and page-limit records.
+    match /usagePeriods/{periodId} {
+      allow read: if signedIn() && resource.data.uid == request.auth.uid;
+      allow write: if false;
+    }
+
+    // Paid users can update only their private academic/workspace documents.
+    match /premiumUsers/{uid}/workspace/{documentId} {
+      allow read, write: if hasActivePremium(uid);
+    }
+
+    match /premiumUsers/{uid}/academic/{documentId} {
+      allow read, write: if hasActivePremium(uid);
+    }
+
+    // Any future billing/account documents under premiumUsers are read-only
+    // to the owning browser and must be written by the trusted server.
+    match /premiumUsers/{uid}/{document=**} {
+      allow read: if hasActivePremium(uid);
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
