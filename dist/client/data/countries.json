@@ -1,0 +1,12 @@
+[
+  { "code": "US", "name": "United States", "defaultPreset": "us-4.0" },
+  { "code": "GB", "name": "United Kingdom", "defaultPreset": "uk-classification" },
+  { "code": "EG", "name": "Egypt", "defaultPreset": "egypt-percentage" },
+  { "code": "MY", "name": "Malaysia", "defaultPreset": "malaysia-4.0" },
+  { "code": "CA", "name": "Canada", "defaultPreset": "canada-4.0" },
+  { "code": "AU", "name": "Australia", "defaultPreset": "australia-percentage" },
+  { "code": "IN", "name": "India", "defaultPreset": "india-10point" },
+  { "code": "SA", "name": "Saudi Arabia", "defaultPreset": "saudi-5.0" },
+  { "code": "AE", "name": "United Arab Emirates", "defaultPreset": "uae-4.0" },
+  { "code": "OTHER", "name": "Other / not listed", "defaultPreset": "us-4.0" }
+]
