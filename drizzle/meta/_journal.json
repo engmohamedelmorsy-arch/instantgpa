@@ -1,0 +1,83 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1785235390685,
+      "tag": "0000_fixed_wither",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1785330292744,
+      "tag": "0001_legal_millenium_guard",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1785418052148,
+      "tag": "0002_aberrant_red_wolf",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1785426376136,
+      "tag": "0003_tranquil_shen",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1785856635600,
+      "tag": "0004_fluffy_dragon_lord",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1786033914806,
+      "tag": "0005_remove_legacy_pro_workspaces",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1786033925115,
+      "tag": "0006_remarkable_marvel_zombies",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1786037025852,
+      "tag": "0007_yielding_mister_fear",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "6",
+      "when": 1786118400000,
+      "tag": "0008_paypal_subscriptions",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "6",
+      "when": 1786204800000,
+      "tag": "0009_remove_legacy_enrollment",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "6",
+      "when": 1786291200000,
+      "tag": "0010_regional_paypal_plans",
+      "breakpoints": true
+    }
+  ]
+}
