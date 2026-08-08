@@ -1,0 +1,403 @@
+{
+  "reviewedAt": "2026-08-08",
+  "policies": {
+    "universities/ucla/gpa-calculator": {
+      "name": "University of California, Los Angeles (UCLA)",
+      "country": "United States",
+      "catalogYear": "Current Registrar policy reviewed July 2026",
+      "presetId": "us-4.0",
+      "maxGpa": 4,
+      "verification": "Official verified",
+      "scope": "University grade points; repetition rules depend on units and the student's record.",
+      "formula": "GPA = total grade points ÷ total GPA units",
+      "notes": [
+        "UCLA assigns A+ and A 4.0 grade points per unit; plus/minus values continue through D−.",
+        "Passed grades do not add grade points to GPA.",
+        "Course repetition treatment changes after the published unit threshold, so the repeat policy must be checked before estimating a new GPA."
+      ],
+      "grades": [
+        ["A+ / A", "4.0"],
+        ["A−", "3.7"],
+        ["B+", "3.3"],
+        ["B", "3.0"],
+        ["B−", "2.7"],
+        ["C+", "2.3"],
+        ["C", "2.0"],
+        ["C−", "1.7"],
+        ["D+", "1.3"],
+        ["D", "1.0"],
+        ["D−", "0.7"],
+        ["F", "0.0"]
+      ],
+      "sources": [
+        {
+          "label": "UCLA Registrar — Grades",
+          "url": "https://catalog.registrar.ucla.edu/Policies-and-Regulations/Academic-Policies/Grades"
+        },
+        {
+          "label": "UCLA Registrar — Repetition of Courses",
+          "url": "https://catalog.registrar.ucla.edu/Policies-and-Regulations/Academic-Policies/Repetition-of-Courses"
+        }
+      ]
+    },
+    "universities/university-of-texas-at-austin/gpa-calculator": {
+      "name": "The University of Texas at Austin",
+      "country": "United States",
+      "catalogYear": "Current Registrar policy reviewed July 2026",
+      "presetId": "us-4.0",
+      "maxGpa": 4,
+      "verification": "Official verified",
+      "scope": "Undergraduate and graduate planning; the official calculator excludes Law.",
+      "formula": "GPA = total grade points ÷ total GPA hours",
+      "notes": [
+        "The Registrar authorizes A and A−, B+, B and B−, C+, C and C−, D+, D and D−, and F.",
+        "The official UT Austin calculator warns that its result is not the official University GPA.",
+        "Law grading is outside the scope of the general calculator."
+      ],
+      "grades": [
+        ["A", "4.0"],
+        ["A−", "3.67"],
+        ["B+", "3.33"],
+        ["B", "3.0"],
+        ["B−", "2.67"],
+        ["C+", "2.33"],
+        ["C", "2.0"],
+        ["C−", "1.67"],
+        ["D+", "1.33"],
+        ["D", "1.0"],
+        ["D−", "0.67"],
+        ["F", "0.0"]
+      ],
+      "sources": [
+        {
+          "label": "UT Austin Registrar — GPA Calculator",
+          "url": "https://registrar.utexas.edu/tools/gpa-calculator"
+        },
+        {
+          "label": "UT Austin Registrar — Grade and Symbol Details",
+          "url": "https://registrar.utexas.edu/faculty/grades/symbols"
+        }
+      ]
+    },
+    "universities/universiti-malaya/gpa-calculator": {
+      "name": "Universiti Malaya",
+      "country": "Malaysia",
+      "catalogYear": "Bachelor's Degree Regulations 2024 and 2025/2026 handbook",
+      "presetId": "malaysia-4.0",
+      "maxGpa": 4,
+      "verification": "Official verified",
+      "scope": "Bachelor's grading scheme; programme and level regulations can differ.",
+      "formula": "GPA = total grade points obtained ÷ total credits taken in the semester",
+      "notes": [
+        "The official 2025/2026 scheme assigns A+ and A 4.00, A− 3.70, B+ 3.30, B 3.00, and B− 2.70.",
+        "The published bachelor's scheme identifies C as a pass in the cited faculty handbook.",
+        "Foundation and postgraduate schemes may use different point values, so degree level must be verified."
+      ],
+      "grades": [
+        ["A+", "4.00"],
+        ["A", "4.00"],
+        ["A−", "3.70"],
+        ["B+", "3.30"],
+        ["B", "3.00"],
+        ["B−", "2.70"],
+        ["C+", "2.30"],
+        ["C", "2.00"]
+      ],
+      "sources": [
+        {
+          "label": "UM Faculty of Science Handbook 2025/2026 — Grading Scheme",
+          "url": "https://ebook.um.edu.my/fsains/FINAL_HANDBOOK_20252026/files/basic-html/page13.html"
+        },
+        {
+          "label": "UM Bachelor's Degree Regulations 2024",
+          "url": "https://fsktm.um.edu.my/fsktm/doc/undergraduate/KaedahPeraturan/UM%20%28Bachelor%27s%20Degree%29%20Regulations%202024_final_Senate%2026.09.24.pdf"
+        }
+      ]
+    },
+    "universities/aastmt/gpa-calculator": {
+      "name": "Arab Academy for Science, Technology and Maritime Transport (AASTMT)",
+      "country": "Egypt",
+      "catalogYear": "Official regulations reviewed July 2026",
+      "presetId": "us-4.0",
+      "maxGpa": 4,
+      "verification": "Official verified — college-specific",
+      "scope": "AASTMT uses college- and programme-specific thresholds; no single percentage table is applied to every student.",
+      "formula": "GPA = total grade points accumulated ÷ total semester hours attempted",
+      "notes": [
+        "Official AASTMT pages state that GPA is credit weighted on a 0–4.0 scale.",
+        "Percentage boundaries and conditional-pass rules differ between colleges and programmes.",
+        "Select the applicable college regulation and catalog year before using a preset."
+      ],
+      "grades": [
+        ["A+", "4.00"],
+        ["A", "3.83"],
+        ["A−", "3.66"],
+        ["B+", "3.33"],
+        ["B", "3.00"],
+        ["B−", "2.66"],
+        ["C+", "2.33"],
+        ["C", "2.00"],
+        ["C−", "1.66"],
+        ["D+", "1.33"],
+        ["D", "1.00"],
+        ["F", "0.00"]
+      ],
+      "sources": [
+        {
+          "label": "AASTMT — Academic Regulations",
+          "url": "https://aast.edu/en/colleges/coe/smartvillage/contenttemp.php?page_id=41900013"
+        },
+        {
+          "label": "AASTMT — Education and Study Regulations",
+          "url": "https://aast.edu/openfiles/opencmsfiles/pdf_retreive_cms_open.php?disp_unit=390%2FEducationRegulations2016.pdf"
+        }
+      ]
+    },
+    "universities/king-saud-university/gpa-calculator": {
+      "name": "King Saud University",
+      "country": "Saudi Arabia",
+      "catalogYear": "Official regulations reviewed July 2026",
+      "presetId": "saudi-5.0",
+      "maxGpa": 5,
+      "verification": "Official verified",
+      "scope": "General 5.0 scale; programme progression rules may add requirements.",
+      "formula": "GPA = total points score ÷ total credit hours",
+      "notes": [
+        "The published scale assigns A+ 5.00, A 4.75, B+ 4.50, B 4.00, C+ 3.50, C 3.00, D+ 2.50, and D 2.00.",
+        "Incomplete and in-progress course symbols have special timing and conversion rules.",
+        "Programme handbooks may impose minimum course or progression grades beyond the general GPA scale."
+      ],
+      "grades": [
+        ["A+", "5.00"],
+        ["A", "4.75"],
+        ["B+", "4.50"],
+        ["B", "4.00"],
+        ["C+", "3.50"],
+        ["C", "3.00"],
+        ["D+", "2.50"],
+        ["D", "2.00"],
+        ["F", "1.00"]
+      ],
+      "sources": [
+        {
+          "label": "KSU — Regulations of Study and Examinations",
+          "url": "https://engineering.ksu.edu.sa/sites/engineering.ksu.edu.sa/files/imce_images/regulations_of_study_and_examinations_of_ksu.pdf"
+        },
+        {
+          "label": "KSU College of Sciences — Academic System and GPA Formula",
+          "url": "https://sciences.ksu.edu.sa/en/node/9701"
+        }
+      ]
+    },
+    "universities/united-arab-emirates-university/gpa-calculator": {
+      "name": "United Arab Emirates University (UAEU)",
+      "country": "United Arab Emirates",
+      "catalogYear": "Current catalog and official policy reviewed July 2026",
+      "presetId": "uae-4.0",
+      "maxGpa": 4,
+      "verification": "Official verified",
+      "scope": "General 4.00 quality-point policy; programme and graduate rules can differ.",
+      "formula": "GPA = sum(course quality points × credit hours) ÷ total GPA credit hours",
+      "notes": [
+        "UAEU describes GPA as a 4.00 quality-point scale weighted by course credit hours.",
+        "The Registrar reports semester and cumulative GPA to two decimal places.",
+        "Degree completion also depends on credit and programme requirements, not GPA alone."
+      ],
+      "grades": [
+        ["A", "4.00"],
+        ["A−", "3.70"],
+        ["B+", "3.30"],
+        ["B", "3.00"],
+        ["B−", "2.70"],
+        ["C+", "2.30"],
+        ["C", "2.00"],
+        ["C−", "1.70"],
+        ["D+", "1.30"],
+        ["D", "1.00"],
+        ["F", "0.00"]
+      ],
+      "sources": [
+        {
+          "label": "UAEU — Grades and Grading",
+          "url": "https://www.uaeu.ac.ae/en/about/policies/admissions_and_enrollment/pol-ae_04_en.pdf"
+        },
+        {
+          "label": "UAEU — Current University Catalog",
+          "url": "https://www.uaeu.ac.ae/en/catalog/"
+        },
+        {
+          "label": "UAEU — Degree Completion and Graduation",
+          "url": "https://www.uaeu.ac.ae/en/about/procedures/admissions_and_enrollment/pro-ae_06_en.pdf"
+        }
+      ]
+    },
+    "official/cairo-university": {
+      "name": "Cairo University",
+      "country": "Egypt",
+      "catalogYear": "Faculty guides reviewed August 2026",
+      "presetId": "egypt-percentage",
+      "maxGpa": "Faculty-specific",
+      "verification": "Official verified — programme-specific",
+      "scope": "Faculties publish separate programme bylaws; no universal Cairo University GPA table is assumed.",
+      "formula": "Use the formula and classifications in the applicable faculty bylaw.",
+      "notes": ["Programme credits, grading and transfer recognition must be checked against the student's faculty and catalog year."],
+      "grades": [],
+      "pageUrl": "https://cu.edu.eg/Home",
+      "sources": [{ "label": "Cairo University official portal", "url": "https://cu.edu.eg/Home" }]
+    },
+    "official/american-university-in-cairo": {
+      "name": "The American University in Cairo",
+      "country": "Egypt",
+      "catalogYear": "Current undergraduate catalog reviewed August 2026",
+      "presetId": "us-4.0",
+      "maxGpa": 4,
+      "verification": "Official verified",
+      "scope": "Undergraduate academic requirements, repeats, withdrawals and transfer credit.",
+      "formula": "GPA = total quality points ÷ total GPA credit hours",
+      "notes": ["Repeat and transfer rules must be applied from the current catalog rather than inferred from the scale alone."],
+      "grades": [],
+      "pageUrl": "https://catalog.aucegypt.edu/",
+      "sources": [{ "label": "AUC academic catalog", "url": "https://catalog.aucegypt.edu/" }]
+    },
+    "official/qatar-university": {
+      "name": "Qatar University",
+      "country": "Qatar",
+      "catalogYear": "2025–2026 undergraduate catalog",
+      "presetId": "us-4.0",
+      "maxGpa": 4,
+      "verification": "Official verified — programme-specific",
+      "scope": "Current undergraduate catalog, registration rules and programme requirements.",
+      "formula": "Use the current catalog's credit-weighted GPA rule.",
+      "notes": ["Withdrawal and degree requirements depend on current deadlines and programme rules."],
+      "grades": [],
+      "pageUrl": "https://qttsc.qu.edu.qa/en-us/students/documents/undergraduate-student-catalog-2025-2026-en.pdf",
+      "sources": [{ "label": "Qatar University undergraduate catalog 2025–2026", "url": "https://qttsc.qu.edu.qa/en-us/students/documents/undergraduate-student-catalog-2025-2026-en.pdf" }]
+    },
+    "official/kuwait-university": {
+      "name": "Kuwait University",
+      "country": "Kuwait",
+      "catalogYear": "Credit-system bylaw reviewed August 2026",
+      "presetId": "us-4.0",
+      "maxGpa": "College-specific",
+      "verification": "Official verified — college-specific",
+      "scope": "University credit-system bylaw plus the receiving college's rules.",
+      "formula": "Use the applicable college grading and credit-unit bylaw.",
+      "notes": ["Transfer and recognized-credit decisions remain with the university and receiving college."],
+      "grades": [],
+      "pageUrl": "https://www.ku.edu.kw/sites/default/files/2024-11/kuw118669.pdf",
+      "sources": [{ "label": "Kuwait University credit system bylaw", "url": "https://www.ku.edu.kw/sites/default/files/2024-11/kuw118669.pdf" }]
+    },
+    "official/sultan-qaboos-university": {
+      "name": "Sultan Qaboos University",
+      "country": "Oman",
+      "catalogYear": "Undergraduate regulations reviewed August 2026",
+      "presetId": "us-4.0",
+      "maxGpa": 4,
+      "verification": "Official verified — programme-specific",
+      "scope": "Undergraduate academic regulations and applicable college bulletin.",
+      "formula": "GPA uses the university's credit-weighted grade-point rule.",
+      "notes": ["Repeat, withdrawal and progression treatment must follow the student's programme regulation."],
+      "grades": [],
+      "pageUrl": "https://www.squ.edu.om/Portals/24/academic-en-2019_1.pdf",
+      "sources": [{ "label": "SQU undergraduate academic regulations", "url": "https://www.squ.edu.om/Portals/24/academic-en-2019_1.pdf" }]
+    },
+    "official/mit": {
+      "name": "Massachusetts Institute of Technology",
+      "country": "United States",
+      "catalogYear": "Current MIT catalog reviewed August 2026",
+      "presetId": "custom",
+      "maxGpa": 5,
+      "verification": "Official verified",
+      "scope": "MIT undergraduate grading, units, repeats and transfer-credit treatment.",
+      "formula": "MIT rating = total grade points weighted by subject units ÷ total graded units",
+      "notes": ["Approved transfer credit carries units but no MIT grade; repeated grades remain in the GPA record."],
+      "grades": [["A", "5.0"], ["B", "4.0"], ["C", "3.0"], ["D", "2.0"], ["F", "0.0"]],
+      "pageUrl": "https://catalog.mit.edu/mit/procedures/academic-performance-grades/",
+      "sources": [{ "label": "MIT academic performance and grades", "url": "https://catalog.mit.edu/mit/procedures/academic-performance-grades/" }]
+    },
+    "official/unsw-sydney": {
+      "name": "UNSW Sydney",
+      "country": "Australia",
+      "catalogYear": "Current results and WAM guidance reviewed August 2026",
+      "presetId": "australia-percentage",
+      "maxGpa": "WAM",
+      "verification": "Official verified",
+      "scope": "UNSW marks, grade symbols and Weighted Average Mark rules.",
+      "formula": "WAM = sum(course mark × units of credit) ÷ eligible units attempted",
+      "notes": ["UNSW states that WAM, not one universal GPA, is its primary weighted result."],
+      "grades": [],
+      "pageUrl": "https://www.student.unsw.edu.au/wam",
+      "sources": [{ "label": "UNSW weighted average mark", "url": "https://www.student.unsw.edu.au/wam" }]
+    },
+    "official/university-of-british-columbia": {
+      "name": "The University of British Columbia",
+      "country": "Canada",
+      "catalogYear": "Current grade guidance reviewed August 2026",
+      "presetId": "canada-4.0",
+      "maxGpa": "Faculty-specific",
+      "verification": "Official verified — faculty-specific",
+      "scope": "UBC percentage and letter grades with faculty-specific average and standing rules.",
+      "formula": "Use the applicable faculty's weighted-average and standing rules.",
+      "notes": ["Faculty and programme rules control progression, repeats and withdrawals."],
+      "grades": [],
+      "pageUrl": "https://students.ubc.ca/enrolment/courses/grades/",
+      "sources": [{ "label": "UBC grades and standing", "url": "https://students.ubc.ca/enrolment/courses/grades/" }]
+    },
+    "official/university-of-oxford": {
+      "name": "University of Oxford",
+      "country": "United Kingdom",
+      "catalogYear": "Current assessment framework reviewed August 2026",
+      "presetId": "uk-classification",
+      "maxGpa": "Not a university-wide GPA",
+      "verification": "Official verified — programme-specific",
+      "scope": "Assessment conventions and classifications depend on the examination and programme.",
+      "formula": "Use the course's published examination conventions; no generic Oxford GPA is assumed.",
+      "notes": ["Final classification and resits must be evaluated under the applicable examination regulations."],
+      "grades": [],
+      "pageUrl": "https://governance.admin.ox.ac.uk/education-committee/policies/examiners-assessment-framework",
+      "sources": [{ "label": "Oxford examiners and assessment framework", "url": "https://governance.admin.ox.ac.uk/education-committee/policies/examiners-assessment-framework" }]
+    },
+    "official/national-university-of-singapore": {
+      "name": "National University of Singapore",
+      "country": "Singapore",
+      "catalogYear": "Current academic structure reviewed August 2026",
+      "presetId": "custom",
+      "maxGpa": 5,
+      "verification": "Official verified",
+      "scope": "NUS grading, S/U, withdrawal and unit-weighted GPA rules.",
+      "formula": "GPA = sum(grade point × course units) ÷ total graded course units",
+      "notes": ["S/U results are excluded from GPA but remain subject to programme and option limits."],
+      "grades": [],
+      "pageUrl": "https://nus.edu.sg/registrar/academic-information-policies/academic-structure-grading",
+      "sources": [{ "label": "NUS academic structure and grading", "url": "https://nus.edu.sg/registrar/academic-information-policies/academic-structure-grading" }]
+    },
+    "official/king-abdulaziz-university": {
+      "name": "King Abdulaziz University",
+      "country": "Saudi Arabia",
+      "catalogYear": "Current undergraduate regulations reviewed August 2026",
+      "presetId": "saudi-5.0",
+      "maxGpa": 5,
+      "verification": "Official verified — programme-specific",
+      "scope": "General undergraduate regulations plus college and programme requirements.",
+      "formula": "GPA = credit-weighted average on the official 5.0 scale",
+      "notes": ["Course repetition and graduation conditions must follow the current university regulation and college plan."],
+      "grades": [],
+      "pageUrl": "https://www.kau.edu.sa/en/regulation/762ed3bf-8746-486f-b319-c8a0abfd313e",
+      "sources": [{ "label": "KAU academic regulations", "url": "https://www.kau.edu.sa/en/regulation/762ed3bf-8746-486f-b319-c8a0abfd313e" }]
+    },
+    "official/university-of-toronto": {
+      "name": "University of Toronto",
+      "country": "Canada",
+      "catalogYear": "Arts & Science calendar reviewed August 2026",
+      "presetId": "canada-4.0",
+      "maxGpa": 4,
+      "verification": "Official verified — faculty-specific",
+      "scope": "Faculty of Arts & Science; other divisions publish separate calendars.",
+      "formula": "Use the faculty calendar's credit-weighted grade-point rules.",
+      "notes": ["Degree requirements depend on faculty, programme combination and catalog year."],
+      "grades": [],
+      "pageUrl": "https://artsci.calendar.utoronto.ca/",
+      "sources": [{ "label": "U of T Arts & Science academic calendar", "url": "https://artsci.calendar.utoronto.ca/" }]
+    }
+  }
+}

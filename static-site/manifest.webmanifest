@@ -1,0 +1,49 @@
+{
+  "name": "InstantGPA Academic Planner",
+  "short_name": "InstantGPA",
+  "description": "GPA, transcript, syllabus, degree planning and academic decision tools.",
+  "id": "/",
+  "start_url": "/dashboard?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#071b35",
+  "orientation": "any",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "/assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Pro semester dashboard",
+      "short_name": "Semester",
+      "url": "/pro-workspace?tab=semester",
+      "icons": [{ "src": "/assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Import transcript",
+      "short_name": "Transcript",
+      "url": "/transcript-import",
+      "icons": [{ "src": "/assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Academic Undo Button",
+      "short_name": "Undo",
+      "url": "/pro-workspace?tab=undo",
+      "icons": [{ "src": "/assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Calendar and LMS · التقويم ومنصات الدراسة",
+      "short_name": "Calendar",
+      "url": "/pro-workspace?tab=integrations",
+      "icons": [{ "src": "/assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    }
+  ]
+}

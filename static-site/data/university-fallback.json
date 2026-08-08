@@ -1,0 +1,11 @@
+{
+  "US": ["Harvard University", "Stanford University", "Massachusetts Institute of Technology", "University of California, Berkeley", "University of Michigan"],
+  "GB": ["University of Oxford", "University of Cambridge", "Imperial College London", "University College London", "University of Edinburgh"],
+  "EG": ["Cairo University", "Ain Shams University", "Alexandria University", "American University in Cairo", "Arab Academy for Science, Technology and Maritime Transport"],
+  "MY": ["University of Malaya", "Universiti Kebangsaan Malaysia", "Universiti Putra Malaysia", "Universiti Teknologi Malaysia", "Universiti Sains Malaysia"],
+  "CA": ["University of Toronto", "University of British Columbia", "McGill University", "University of Waterloo", "University of Alberta"],
+  "AU": ["University of Melbourne", "University of Sydney", "Australian National University", "University of Queensland", "Monash University"],
+  "IN": ["Indian Institute of Technology Bombay", "Indian Institute of Technology Delhi", "University of Delhi", "Jawaharlal Nehru University", "Anna University"],
+  "SA": ["King Saud University", "King Abdulaziz University", "King Fahd University of Petroleum and Minerals", "King Abdullah University of Science and Technology"],
+  "AE": ["United Arab Emirates University", "American University of Sharjah", "Khalifa University", "University of Sharjah"]
+}

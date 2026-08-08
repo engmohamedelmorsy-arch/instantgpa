@@ -1,0 +1,111 @@
+{
+  "title": "InstantGPA Formula Validation Pack",
+  "version": "2026.07.30",
+  "reviewedAt": "2026-07-30",
+  "license": "CC BY 4.0",
+  "methodology": "https://instantgpa.com/trust",
+  "notes": [
+    "Results are planning calculations, not official academic records.",
+    "Institutional rules govern exclusions, repeats, rounding, and grade points."
+  ],
+  "cases": [
+    {
+      "id": "semester-gpa-4-course",
+      "type": "semester-gpa",
+      "inputs": {
+        "courses": [
+          { "credits": 4, "gradePoints": 4 },
+          { "credits": 3, "gradePoints": 3.3 },
+          { "credits": 3, "gradePoints": 3.7 },
+          { "credits": 2, "gradePoints": 3 }
+        ]
+      },
+      "expected": {
+        "gpaCredits": 12,
+        "qualityPoints": 43,
+        "gpa": 3.5833333333
+      }
+    },
+    {
+      "id": "cumulative-gpa",
+      "type": "cumulative-gpa",
+      "inputs": {
+        "previousGpa": 3.2,
+        "previousCredits": 60,
+        "currentGpa": 3.6,
+        "currentCredits": 15
+      },
+      "expected": {
+        "totalCredits": 75,
+        "qualityPoints": 246,
+        "gpa": 3.28
+      }
+    },
+    {
+      "id": "retake-replace-old",
+      "type": "retake",
+      "inputs": {
+        "currentGpa": 2.8,
+        "currentCredits": 60,
+        "courseCredits": 3,
+        "oldGradePoints": 1,
+        "newGradePoints": 4,
+        "policy": "replace"
+      },
+      "expected": {
+        "totalCredits": 60,
+        "qualityPoints": 177,
+        "gpa": 2.95
+      }
+    },
+    {
+      "id": "retake-count-both",
+      "type": "retake",
+      "inputs": {
+        "currentGpa": 2.8,
+        "currentCredits": 60,
+        "courseCredits": 3,
+        "newGradePoints": 4,
+        "policy": "both"
+      },
+      "expected": {
+        "totalCredits": 63,
+        "qualityPoints": 180,
+        "gpa": 2.8571428571
+      }
+    },
+    {
+      "id": "weighted-course-grade",
+      "type": "weighted-grade",
+      "inputs": {
+        "components": [
+          { "weight": 20, "score": 80 },
+          { "weight": 30, "score": 90 },
+          { "weight": 50, "score": 75 }
+        ]
+      },
+      "expected": {
+        "totalWeight": 100,
+        "percentage": 80.5
+      }
+    },
+    {
+      "id": "exclude-pass-withdraw",
+      "type": "semester-gpa",
+      "inputs": {
+        "courses": [
+          { "credits": 3, "gradePoints": 4, "status": "graded" },
+          { "credits": 3, "gradePoints": 3, "status": "graded" },
+          { "credits": 2, "status": "pass" },
+          { "credits": 3, "status": "withdrawn" }
+        ]
+      },
+      "expected": {
+        "gpaCredits": 6,
+        "qualityPoints": 21,
+        "gpa": 3.5,
+        "excludedCredits": 5
+      }
+    }
+  ]
+}

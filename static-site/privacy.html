@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — InstantGPA</title>
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://instantgpa.com/privacy.html">
+<link rel="stylesheet" href="/assets/app.css?v=20260728-full-i18n">
+<style>
+  .legal { max-width: 720px; margin: var(--space-7) auto; padding: 0 var(--space-5); }
+  .legal h1 { color: var(--color-primary); }
+  .legal h2 { font-size: 18px; color: var(--color-primary); margin-top: var(--space-6); }
+  .legal p, .legal li { color: var(--color-ink-soft); line-height: 1.7; }
+  .legal-toolbar { display: flex; justify-content: flex-end; gap: .5rem; margin-bottom: 1rem; }
+  .legal-toolbar button { border: 1px solid var(--color-border); border-radius: 999px; padding: .45rem .85rem; background: var(--color-surface); color: var(--color-primary); cursor: pointer; }
+  .legal-toolbar button[aria-pressed="true"] { background: var(--color-primary); color: #fff; }
+  [data-legal-lang][hidden] { display: none; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="./" class="brand">
+    <span class="brand-mark" aria-hidden="true">🎓</span>
+    <span class="brand-text"><strong>InstantGPA</strong></span>
+  </a>
+</header>
+<main class="legal">
+  <div class="legal-toolbar" aria-label="Policy language">
+    <button type="button" data-language="en" aria-pressed="true">English</button>
+    <button type="button" data-language="ar" aria-pressed="false">العربية</button>
+  </div>
+
+  <article data-legal-lang="en">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: 2026-08-08</p>
+    <h2>Operator and purpose</h2>
+    <p>InstantGPA is an independently operated academic calculation and planning service. We collect the structured data below to calculate results, preserve approved records, provide paid tools, prevent abuse, and improve transcript parsing, grading coverage, course matching, and the university directory. We do not sell academic records or use grades for personalized advertising.</p>
+    <h2>Free users</h2>
+    <p>After confirmation, we store country, university, college or faculty, department or programme, grading system, directory-match status, policy version, timestamps, and approved structured transcript data: course names and codes, terms, credit hours, grades, attempts, statuses, and calculated summaries. Free records use a random browser installation key rather than an account email and synchronize pseudonymously to Cloudflare D1. Clearing browser data intentionally restarts the Free journey, but does not by itself delete a record already synchronized to D1.</p>
+    <h2>Premium subscribers</h2>
+    <p>Firebase Authentication and Firestore are the single subscriber-data store. Firestore holds the subscriber identity and account status, entitlement, PayPal references and lifecycle, usage and page limits, transactional-email delivery records, academic profile and transcript, Premium workspace, syllabus evidence, simulations, transfer comparisons, review results, adviser-report payloads, report-link security metadata, access counters, and administration events concerning the subscriber. Cloudflare D1 is not used for identifiable Premium subscriber records; it remains available for pseudonymous Free data, public directory contributions, and global configuration. Older identifiable Premium records, if found during sign-in, are copied to Firestore before their D1 copy is removed.</p>
+    <h2>Files and OCR</h2>
+    <p>Searchable XLSX, CSV, text, and PDF files are read locally first. The approved academic record does not retain the original file, file name, or raw transcript/OCR text. If local reading is insufficient, the service asks for consent before secure cloud OCR. The uploaded file is used to extract text and table structure; temporary provider storage, when used, is configured for short retention.</p>
+    <h2>Accounts, payment, and email</h2>
+    <p>There are two customer tiers: anonymous Free and paid Premium. Firebase sends identity-verification and password-reset messages. PayPal processes the subscription and may offer PayPal login or eligible debit/credit-card checkout; InstantGPA never receives full card or bank details. Resend sends transactional welcome, activation, cancellation, and account messages after the relevant event. Firestore stores limited provider references, status, dates, and delivery identifiers to reconcile access and avoid duplicate emails.</p>
+    <h2>Regional pricing and connection data</h2>
+    <p>Cloudflare derives an approximate country code at the network edge to choose an approved regional price. The application does not forward or store the visitor's raw IP address for pricing. Security controls may process connection metadata transiently to prevent abuse.</p>
+    <h2>Analytics, cookies, and app cache</h2>
+    <p>Optional analytics load only after consent and measure anonymous journey events such as setup started, transcript upload and review, pricing viewed, checkout started or completed, and the page where a session ended. They must not receive transcript files or text, course names or codes, grades, GPA values, student identifiers, email addresses, or passwords. Operational error reports are sanitized and do not include an account or installation identifier. Result feedback is submitted only when you explicitly choose Yes or No; optional written feedback must not contain personal or academic-record data. The installable app caches public interface files for reliable startup; API responses and private account data are not part of the public shell cache.</p>
+    <h2>Retention, access, and deletion</h2>
+    <p>Academic records are retained while the browser installation or Premium account remains in use, subject to payment-dispute, security, provider, and legal obligations. Pseudonymous journey events and result feedback are retained for up to 180 days; sanitized operational errors are retained for up to 90 days. The service periodically deletes older observability records. Access is limited to the user, authorized service operations, and infrastructure providers needed to operate InstantGPA. The Account page provides self-service JSON export and deletion for both Free and Premium data. Deleting Premium also cancels an active subscription before academic data is removed; PayPal may retain transaction records under its own legal obligations. If the self-service control fails, contact <a href="mailto:privacy@instantgpa.com">privacy@instantgpa.com</a>.</p>
+  </article>
+
+  <article data-legal-lang="ar" lang="ar" dir="rtl" hidden>
+    <h1>سياسة الخصوصية</h1>
+    <p>آخر تحديث: 2026-08-08</p>
+    <h2>المشغّل والغرض من جمع البيانات</h2>
+    <p>InstantGPA خدمة مستقلة للحساب والتخطيط الأكاديمي. نجمع البيانات المنظمة الموضحة أدناه لحساب النتائج، وحفظ السجلات التي وافق عليها المستخدم، وتشغيل الأدوات المدفوعة، ومنع إساءة الاستخدام، وتحسين قراءة الترانسكريبت وتغطية أنظمة التقييم ومطابقة المقررات ودليل الجامعات. لا نبيع السجلات الأكاديمية ولا نستخدم الدرجات لتخصيص الإعلانات.</p>
+    <h2>المستخدم المجاني</h2>
+    <p>بعد التأكيد نحفظ الدولة والجامعة والكلية أو المعهد والقسم أو البرنامج ونظام التقييم وحالة المطابقة مع الدليل وإصدار السياسة والتواريخ، بالإضافة إلى بيانات الترانسكريبت المنظمة التي وافقت عليها: أسماء المقررات وأكوادها والفصول والساعات والدرجات والمحاولات والحالات والملخصات المحسوبة. تُربط بيانات المجاني بمفتاح عشوائي للمتصفح بدل البريد الإلكتروني، وتُزامن بصورة مستعارة مع Cloudflare D1. مسح بيانات المتصفح يعيد رحلة المجاني من البداية عن قصد، لكنه لا يحذف تلقائيًا سجلًا سبق رفعه إلى D1.</p>
+    <h2>المشترك Premium</h2>
+    <p>Firebase Authentication وFirestore هما المكان الموحد لبيانات المشترك. يحفظ Firestore هوية المشترك وحالة الحساب والاستحقاق ومراجع PayPal ودورة الاشتراك والاستهلاك وحدود الصفحات وسجلات رسائل المعاملات والملف الأكاديمي والترانسكريبت ومساحة Premium وأدلة السيلابس والمحاكاة ومقارنات التحويل ونتائج المراجعة وتقارير المرشد وروابطها الآمنة وعدادات الوصول وأحداث الإدارة المتعلقة بالمشترك. لا يُستخدم Cloudflare D1 لبيانات Premium التي تحدد هوية المشترك؛ ويظل مخصصًا لبيانات المجاني المستعارة ومساهمات الدليل العامة وإعدادات الخدمة العامة. إذا وُجدت بيانات Premium قديمة في D1، تُنسخ إلى Firestore أولًا ثم تُحذف نسختها من D1.</p>
+    <h2>الملفات وقراءة OCR</h2>
+    <p>تُقرأ ملفات XLSX وCSV والنصوص وملفات PDF القابلة للبحث محليًا أولًا. لا يحتفظ السجل الأكاديمي بالملف الأصلي أو اسمه أو نص الترانسكريبت/OCR الخام. إذا لم تكفِ القراءة المحلية، تطلب الخدمة موافقتك قبل استخدام OCR سحابي آمن. يُستخدم الملف لاستخراج النص وبنية الجدول فقط، ويكون تخزين المزود المؤقت — عند استخدامه — قصير المدة.</p>
+    <h2>الحساب والدفع والبريد</h2>
+    <p>يوجد نوعان فقط: مجاني مجهول دون حساب، وPremium مدفوع. يرسل Firebase رسائل تأكيد الهوية وإعادة تعيين كلمة المرور. يعالج PayPal الاشتراك وقد يعرض تسجيل PayPal أو الدفع ببطاقة خصم/ائتمان مؤهلة؛ ولا تستلم InstantGPA بيانات البطاقة أو الحساب البنكي كاملة. يرسل Resend رسائل الترحيب والتفعيل والإلغاء ورسائل الحساب بعد حدوث الحدث المناسب. يحفظ Firestore مراجع المزود المحدودة والحالة والتواريخ ومعرفات التسليم لتأكيد الصلاحية ومنع تكرار الرسائل.</p>
+    <h2>التسعير الإقليمي وبيانات الاتصال</h2>
+    <p>تستنتج Cloudflare رمز الدولة التقريبي عند حافة الشبكة لاختيار السعر الإقليمي المعتمد. لا يرسل التطبيق عنوان IP الخام ولا يخزنه لأغراض التسعير. وقد تُعالج بيانات اتصال مؤقتة ضمن إجراءات الأمان ومنع إساءة الاستخدام.</p>
+    <h2>التحليلات وملفات الارتباط وكاش التطبيق</h2>
+    <p>لا تعمل التحليلات الاختيارية إلا بعد الموافقة، وتقيس أحداث الرحلة المجهولة مثل بدء الإعداد ورفع الترانسكريبت ومراجعته والوصول إلى الأسعار وبدء الدفع أو إتمامه والصفحة التي انتهت عندها الجلسة. ويُمنع إرسال ملفات أو نصوص الترانسكريبت أو أسماء وأكواد المقررات أو الدرجات أو قيم GPA أو معرف الطالب أو البريد أو كلمة المرور إليها. تُنقّى تقارير أخطاء التشغيل ولا تتضمن معرف الحساب أو التثبيت. ولا يُرسل تقييم النتيجة إلا عندما تختار «نعم» أو «لا» بنفسك، ويجب ألا تتضمن الملاحظة الاختيارية بيانات شخصية أو أكاديمية. يخزن التطبيق القابل للتثبيت ملفات الواجهة العامة فقط لتشغيل موثوق؛ ولا تدخل استجابات API أو بيانات الحساب الخاصة ضمن كاش الواجهة العامة.</p>
+    <h2>الاحتفاظ والوصول والحذف</h2>
+    <p>نحتفظ بالسجلات الأكاديمية ما دام تثبيت المتصفح أو حساب Premium مستخدمًا، مع مراعاة المدد اللازمة للأمان ونزاعات الدفع ومتطلبات المزود والالتزامات القانونية. تُحفظ أحداث الرحلة المستعارة وتقييمات النتائج لمدة أقصاها 180 يومًا، وتقارير أخطاء التشغيل المنقّاة لمدة أقصاها 90 يومًا، وتحذف الخدمة دوريًا ما تجاوز ذلك. يقتصر الوصول على المستخدم وعمليات الخدمة المصرح لها ومزودي البنية اللازمة للتشغيل. توفر صفحة الحساب تصدير JSON وحذف البيانات ذاتيًا للمجاني وPremium. يؤدي حذف Premium أيضًا إلى إلغاء الاشتراك النشط قبل إزالة البيانات الأكاديمية؛ وقد يحتفظ PayPal بسجلات المعاملات وفق التزاماته القانونية. إذا تعذر تنفيذ الأداة الذاتية، راسل <a href="mailto:privacy@instantgpa.com">privacy@instantgpa.com</a>.</p>
+  </article>
+</main>
+<script>
+  (() => {
+    const key = "instantgpa:language";
+    let saved = "en";
+    try { saved = JSON.parse(localStorage.getItem(key) || '"en"'); } catch { saved = "en"; }
+    const setLanguage = (language) => {
+      const selected = language === "ar" ? "ar" : "en";
+      document.documentElement.lang = selected;
+      document.documentElement.dir = selected === "ar" ? "rtl" : "ltr";
+      document.querySelectorAll("[data-legal-lang]").forEach((article) => { article.hidden = article.dataset.legalLang !== selected; });
+      document.querySelectorAll("[data-language]").forEach((button) => { button.setAttribute("aria-pressed", String(button.dataset.language === selected)); });
+      try { localStorage.setItem(key, JSON.stringify(selected)); } catch {}
+    };
+    document.querySelectorAll("[data-language]").forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.language)));
+    setLanguage(saved);
+  })();
+</script>
+</body>
+</html>
