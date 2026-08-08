@@ -1,0 +1,46 @@
+/* InstantGPA v55 — content-fit form controls across every route.
+   JavaScript measures the rendered option/value text and writes the exact
+   border-box width to --fit-control-width. The viewport remains the hard cap. */
+
+.fit-control-width {
+  box-sizing: border-box;
+  width: var(--fit-control-width) !important;
+  inline-size: var(--fit-control-width) !important;
+  min-width: 0 !important;
+  min-inline-size: 0 !important;
+  max-width: 100% !important;
+  max-inline-size: 100% !important;
+  align-self: start;
+  justify-self: start;
+  flex: 0 1 auto;
+  field-sizing: fixed;
+}
+
+.field:has(> .fit-control-width) {
+  width: fit-content !important;
+  inline-size: fit-content !important;
+  min-width: 0 !important;
+  min-inline-size: 0 !important;
+  max-width: 100% !important;
+  max-inline-size: 100% !important;
+  justify-self: start;
+}
+
+.field:has(> .fit-control-width) > span,
+.field:has(> .fit-control-width) > small {
+  max-width: var(--fit-control-width);
+}
+
+.student-table .fit-control-width,
+.record-table .fit-control-width,
+.grading-table .fit-control-width,
+.grade-scroll .fit-control-width {
+  max-width: 100% !important;
+}
+
+@media (max-width: 760px) {
+  .fit-control-width {
+    max-width: 100% !important;
+    max-inline-size: 100% !important;
+  }
+}

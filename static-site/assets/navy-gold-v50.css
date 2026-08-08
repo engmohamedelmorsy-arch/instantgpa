@@ -1,0 +1,1165 @@
+/* InstantGPA v50 — navy and gold academic workspace.
+   The information architecture follows a direct calculator-first flow:
+   clear modes, a structured course table, and a persistent live result.
+   Gold is reserved for focus, active state, and fine boundary detail. */
+
+:root {
+  --ig-navy-950: #041428;
+  --ig-navy-900: #071b35;
+  --ig-navy-800: #0a2a50;
+  --ig-navy-700: #103b6d;
+  --ig-navy-600: #18518b;
+  --ig-gold-600: #a77b16;
+  --ig-gold-500: #c89b2c;
+  --ig-gold-400: #ddb95c;
+  --ig-gold-200: #f0dfad;
+  --ig-gold-100: #faf3df;
+  --ig-ink: #10233d;
+  --ig-copy: #4e6078;
+  --ig-muted: #718096;
+  --ig-canvas: #f4f7fb;
+  --ig-surface: #ffffff;
+  --ig-line: #dbe3ed;
+  --ig-navy-soft: #edf3f9;
+  --ig-success: #176f5b;
+  --ig-danger: #b33d4d;
+  --ig-shadow: 0 24px 70px -42px rgba(4, 20, 40, .5);
+  --ig-shadow-soft: 0 12px 34px -26px rgba(4, 20, 40, .38);
+}
+
+html {
+  background: var(--ig-canvas);
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 4%, rgba(24, 81, 139, .11), transparent 28rem),
+    radial-gradient(circle at 94% 14%, rgba(200, 155, 44, .11), transparent 23rem),
+    linear-gradient(180deg, #fbfcfe 0, var(--ig-canvas) 42rem);
+  color: var(--ig-ink);
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 76px 0 auto;
+  height: 210px;
+  background-image:
+    linear-gradient(rgba(16, 59, 109, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 59, 109, .035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), transparent);
+  content: "";
+  pointer-events: none;
+}
+
+::selection {
+  background: var(--ig-gold-200);
+  color: var(--ig-navy-950);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(200, 155, 44, .42) !important;
+  outline-offset: 3px;
+}
+
+.site-header {
+  min-height: 78px;
+  border-bottom: 1px solid rgba(221, 185, 92, .72);
+  background:
+    radial-gradient(circle at 18% -120%, rgba(255, 255, 255, .18), transparent 19rem),
+    linear-gradient(112deg, var(--ig-navy-950), var(--ig-navy-800) 58%, #0c315d);
+  box-shadow: 0 13px 34px -22px rgba(4, 20, 40, .88);
+}
+
+.brand-mark {
+  border: 1px solid rgba(221, 185, 92, .74);
+  background: linear-gradient(145deg, #123f71, var(--ig-navy-950));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .16),
+    0 12px 24px -14px rgba(0, 0, 0, .8);
+}
+
+.brand-text strong,
+.brand-text strong em {
+  color: #fff;
+}
+
+.brand-text strong em {
+  color: var(--ig-gold-400);
+}
+
+.brand-text small {
+  color: #b7c6d8;
+}
+
+.tools-menu > summary,
+.icon-link,
+.lang-switcher,
+.pro-header-link {
+  border-color: rgba(221, 185, 92, .34);
+  background: rgba(255, 255, 255, .075);
+  color: #eef4fb;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+.tools-menu > summary:hover,
+.icon-link:hover,
+.lang-switcher:hover,
+.pro-header-link:hover {
+  border-color: rgba(221, 185, 92, .72);
+  background: rgba(255, 255, 255, .12);
+}
+
+.tools-menu > summary > span,
+.pro-header-link,
+.pro-header-link span {
+  color: var(--ig-gold-400);
+}
+
+.lang-switcher select {
+  color: #eef4fb;
+}
+
+.lang-switcher select option {
+  background: var(--ig-navy-900);
+  color: #fff;
+}
+
+.tools-menu__panel {
+  border: 1px solid var(--ig-gold-200);
+  background: rgba(255, 255, 255, .99);
+  box-shadow: 0 32px 80px -34px rgba(4, 20, 40, .62);
+}
+
+.tools-menu__head {
+  border-color: var(--ig-gold-200);
+  background:
+    radial-gradient(circle at 92% 15%, rgba(221, 185, 92, .2), transparent 10rem),
+    var(--ig-navy-soft);
+}
+
+.tools-menu__head strong,
+.tools-menu__grid a {
+  color: var(--ig-ink);
+}
+
+.tools-menu__head small {
+  color: var(--ig-copy);
+}
+
+.tools-menu__grid a:hover {
+  border-color: var(--ig-gold-200);
+  background: var(--ig-gold-100);
+  color: var(--ig-navy-800);
+}
+
+.tools-menu__grid a > span {
+  background: var(--ig-navy-soft);
+  color: var(--ig-navy-700);
+}
+
+main#mainContent {
+  max-width: 1500px;
+}
+
+/* First-run setup: 80% wide, but internally balanced instead of stretched. */
+@media (min-width: 981px) {
+  .home-stage.home-stage--portal {
+    display: grid;
+    grid-template-columns: minmax(300px, .78fr) minmax(560px, 1.22fr);
+    align-items: center;
+    justify-items: stretch;
+    gap: clamp(34px, 4vw, 68px);
+    width: min(1280px, 88vw);
+    min-height: calc(100vh - 78px);
+    margin-inline: auto;
+    padding: clamp(46px, 6vw, 82px) 0;
+  }
+
+  .home-stage--portal .setup-hero {
+    width: 100%;
+    max-width: none;
+  }
+
+  .home-stage--portal .home-setup-panel {
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
+  }
+
+  .home-stage--portal .context-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .home-stage--portal .context-grid .field:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.home-stage--portal .setup-hero .hero-eyebrow,
+.section-kicker,
+.student-workspace-head > div > span {
+  border: 1px solid var(--ig-gold-200);
+  background: var(--ig-gold-100);
+  color: var(--ig-gold-600);
+}
+
+.home-stage--portal .setup-hero .hero-eyebrow i {
+  background: var(--ig-gold-500);
+  box-shadow: 0 0 0 5px rgba(200, 155, 44, .15);
+}
+
+.home-stage--portal .setup-hero h2 {
+  max-width: 12ch;
+  color: var(--ig-navy-950);
+  text-wrap: balance;
+}
+
+.home-stage--portal .setup-hero h2::after {
+  display: block;
+  width: 74px;
+  height: 4px;
+  margin-top: 20px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ig-gold-500), rgba(200, 155, 44, .18));
+  content: "";
+}
+
+.home-stage--portal .setup-hero .hero-lead {
+  color: var(--ig-copy);
+}
+
+.student-goal {
+  border-color: var(--ig-line);
+  background: rgba(255, 255, 255, .82);
+}
+
+.student-goal:hover {
+  border-color: var(--ig-gold-400);
+  background: #fff;
+  box-shadow: var(--ig-shadow-soft);
+}
+
+.student-goal > span,
+.student-goal:nth-child(n) > span {
+  border: 1px solid rgba(200, 155, 44, .34);
+  background: var(--ig-navy-soft);
+  color: var(--ig-navy-700);
+}
+
+.student-goal strong {
+  color: var(--ig-navy-900);
+}
+
+.student-goal small {
+  color: var(--ig-copy);
+}
+
+.hero-reassurance {
+  background: rgba(237, 243, 249, .92);
+  color: var(--ig-copy);
+}
+
+.hero-reassurance > span {
+  color: var(--ig-success);
+}
+
+.home-setup-panel {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(25px, 3vw, 38px);
+  border: 1px solid rgba(200, 155, 44, .72);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(221, 185, 92, .14), transparent 16rem),
+    rgba(255, 255, 255, .98);
+  box-shadow: var(--ig-shadow);
+}
+
+.home-setup-panel::before {
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--ig-navy-800) 0 72%, var(--ig-gold-500) 72%);
+  content: "";
+}
+
+.home-setup-panel::after {
+  position: absolute;
+  z-index: 0;
+  top: -52px;
+  inset-inline-end: -52px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(200, 155, 44, .24);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 20px rgba(200, 155, 44, .045),
+    0 0 0 44px rgba(16, 59, 109, .028);
+  content: "";
+  pointer-events: none;
+}
+
+.home-setup-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.student-setup-head > span,
+.context-title > span:first-child {
+  border: 1px solid rgba(221, 185, 92, .55);
+  background: linear-gradient(145deg, var(--ig-navy-700), var(--ig-navy-950));
+  color: var(--ig-gold-400);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14);
+}
+
+.student-setup-head strong,
+.context-title strong {
+  color: var(--ig-navy-950);
+}
+
+.student-setup-head small,
+.context-title div > span,
+.home-stage .setup-intro {
+  color: var(--ig-copy);
+}
+
+.home-stage .field > span {
+  color: var(--ig-navy-800);
+}
+
+.home-stage .field select,
+.home-stage .field input,
+.tool-card input,
+.tool-card select,
+.tool-card textarea {
+  border-color: #cfd9e6;
+  background: #fff;
+  color: var(--ig-ink);
+}
+
+.home-stage .field select:focus,
+.home-stage .field input:focus,
+.tool-card input:focus,
+.tool-card select:focus,
+.tool-card textarea:focus {
+  border-color: var(--ig-gold-500);
+  box-shadow: 0 0 0 4px rgba(200, 155, 44, .12);
+}
+
+.home-stage--portal .setup-confirm-row {
+  border-color: var(--ig-gold-200);
+  background: linear-gradient(135deg, var(--ig-gold-100), #fff);
+}
+
+.home-stage--portal .setup-confirm-row > div strong {
+  color: var(--ig-navy-900);
+}
+
+.btn--primary,
+.home-stage--portal #confirmAcademicContext {
+  border: 1px solid var(--ig-gold-500);
+  background: linear-gradient(135deg, var(--ig-navy-700), var(--ig-navy-950));
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .16),
+    0 14px 28px -18px rgba(4, 20, 40, .85);
+}
+
+.btn--primary:hover,
+.home-stage--portal #confirmAcademicContext:hover {
+  border-color: var(--ig-gold-400);
+  background: linear-gradient(135deg, var(--ig-navy-600), var(--ig-navy-900));
+}
+
+.btn--ghost {
+  border-color: #aebed0;
+  background: #fff;
+  color: var(--ig-navy-800);
+}
+
+.btn--ghost:hover {
+  border-color: var(--ig-gold-500);
+  background: var(--ig-gold-100);
+  color: var(--ig-navy-950);
+}
+
+.btn--text {
+  color: var(--ig-navy-700);
+}
+
+/* Workspace tabs: five destinations, then lightweight tool modes. */
+.student-workspace-head {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--ig-gold-200);
+  background:
+    radial-gradient(circle at 90% 0, rgba(221, 185, 92, .13), transparent 18rem),
+    linear-gradient(145deg, #fff, var(--ig-navy-soft));
+  box-shadow: var(--ig-shadow-soft);
+}
+
+.student-workspace-head h2,
+.home-section h2 {
+  color: var(--ig-navy-950);
+}
+
+.student-workspace-head p,
+.home-section p {
+  color: var(--ig-copy);
+}
+
+.profile-bar {
+  border-color: var(--ig-line);
+  background: rgba(255, 255, 255, .9);
+}
+
+.profile-bar__label {
+  color: var(--ig-gold-600);
+}
+
+.profile-bar__uni {
+  color: var(--ig-navy-900);
+}
+
+.profile-bar__system {
+  color: var(--ig-copy);
+}
+
+.workspace-nav {
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid #ccd8e5;
+  border-radius: 17px;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: var(--ig-shadow-soft);
+}
+
+.workspace-nav a {
+  min-height: 56px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--ig-copy);
+}
+
+.workspace-nav a b {
+  color: var(--ig-navy-600);
+}
+
+.workspace-nav a:hover {
+  border-color: var(--ig-gold-200);
+  background: var(--ig-gold-100);
+  color: var(--ig-navy-900);
+}
+
+.workspace-nav a.is-active {
+  border-color: var(--ig-gold-500);
+  background: linear-gradient(135deg, var(--ig-navy-700), var(--ig-navy-950));
+  color: #fff;
+  box-shadow: 0 12px 24px -17px rgba(4, 20, 40, .88);
+}
+
+.workspace-nav a.is-active b {
+  color: var(--ig-gold-400);
+}
+
+.workspace-subnav {
+  border-bottom: 1px solid var(--ig-line);
+}
+
+.workspace-subnav a {
+  color: var(--ig-copy);
+}
+
+.workspace-subnav a:hover {
+  color: var(--ig-navy-800);
+}
+
+.workspace-subnav a.is-active {
+  border-color: var(--ig-gold-500);
+  background: var(--ig-gold-100);
+  color: var(--ig-navy-900);
+}
+
+.student-tool-guide li {
+  border-color: var(--ig-line);
+  background: rgba(255, 255, 255, .86);
+  color: var(--ig-copy);
+}
+
+.student-tool-guide li b {
+  border: 1px solid var(--ig-gold-200);
+  background: var(--ig-navy-soft);
+  color: var(--ig-navy-700);
+}
+
+.tool-host {
+  max-width: 1280px;
+}
+
+.setup-card,
+.tool-card,
+.home-section,
+.editorial-body,
+.editorial-aside section,
+.methodology-section,
+.report-section {
+  border-color: var(--ig-line);
+  background: rgba(255, 255, 255, .97);
+  box-shadow: var(--ig-shadow-soft);
+}
+
+.tool-card h2,
+.tool-card h3,
+.setup-card h2 {
+  color: var(--ig-navy-950);
+}
+
+.tool-sub {
+  color: var(--ig-copy);
+}
+
+.record-connected {
+  border-color: #b8dcd1;
+  background: #eef8f5;
+  color: #175b4b;
+}
+
+.record-connected--empty {
+  border-color: var(--ig-line);
+  background: var(--ig-navy-soft);
+  color: var(--ig-copy);
+}
+
+/* Calculator-first GPA page. */
+@media (min-width: 981px) {
+  .tool-host.tool-host--gpa-entry {
+    position: relative;
+    left: 50%;
+    width: 88vw;
+    max-width: none;
+    margin-inline: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.gpa-entry-workspace {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: none;
+  padding: clamp(22px, 3vw, 38px);
+  border: 1px solid rgba(200, 155, 44, .62);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(221, 185, 92, .1), transparent 22rem),
+    #fff;
+  box-shadow: var(--ig-shadow);
+}
+
+.gpa-entry-workspace::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(90deg, var(--ig-navy-800) 0 78%, var(--ig-gold-500) 78%);
+  content: "";
+}
+
+.gpa-workspace-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.gpa-workspace-title > div {
+  min-width: 0;
+}
+
+.gpa-workspace-title h2 {
+  margin: 0;
+}
+
+.gpa-workspace-title .tool-sub {
+  margin: 8px 0 0;
+}
+
+.gpa-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid var(--ig-gold-200);
+  border-radius: 999px;
+  background: var(--ig-gold-100);
+  color: var(--ig-gold-600);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+}
+
+.gpa-live-badge::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ig-success);
+  box-shadow: 0 0 0 4px rgba(23, 111, 91, .1);
+  content: "";
+}
+
+.calculator-mode-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 6px;
+  border: 1px solid var(--ig-line);
+  border-radius: 15px;
+  background: var(--ig-navy-soft);
+}
+
+.calculator-mode-tabs a,
+.calculator-mode-tabs span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--ig-copy);
+  font-size: 13px;
+  font-weight: 760;
+  text-align: center;
+  text-decoration: none;
+}
+
+.calculator-mode-tabs a:hover {
+  border-color: var(--ig-gold-200);
+  background: #fff;
+  color: var(--ig-navy-900);
+}
+
+.calculator-mode-tabs .is-active {
+  border-color: var(--ig-gold-500);
+  background: #fff;
+  color: var(--ig-navy-900);
+  box-shadow: var(--ig-shadow-soft);
+}
+
+.gpa-calculator-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(285px, 330px);
+  align-items: start;
+  gap: clamp(20px, 2.3vw, 32px);
+}
+
+.gpa-table-panel {
+  min-width: 0;
+}
+
+.gpa-table-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.gpa-table-heading h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.gpa-table-heading span {
+  color: var(--ig-muted);
+  font-size: 12px;
+}
+
+.course-rows,
+.grading-rows {
+  gap: 0;
+  overflow: hidden;
+  margin: 16px 0;
+  border: 1px solid #cfd9e5;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.course-row,
+.grading-row,
+.gpa-entry-workspace .course-row {
+  grid-template-columns:
+    minmax(230px, 4fr)
+    minmax(118px, 1.25fr)
+    minmax(92px, .9fr)
+    48px;
+  gap: clamp(8px, 1vw, 16px);
+}
+
+.course-row--head,
+.grading-row--head {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 0;
+  border-bottom: 1px solid rgba(221, 185, 92, .58);
+  border-radius: 0;
+  background: linear-gradient(135deg, var(--ig-navy-900), var(--ig-navy-700));
+  color: #eef4fb;
+  font-size: 11px;
+  font-weight: 820;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.course-row:not(.course-row--head),
+.grading-row:not(.grading-row--head) {
+  min-height: 64px;
+  padding: 9px 12px;
+  border: 0;
+  border-bottom: 1px solid var(--ig-line);
+  border-radius: 0;
+  background: #fff;
+}
+
+.course-row:not(.course-row--head):nth-child(odd),
+.grading-row:not(.grading-row--head):nth-child(odd) {
+  background: #f8fafc;
+}
+
+.course-row:not(.course-row--head):last-child,
+.grading-row:not(.grading-row--head):last-child {
+  border-bottom: 0;
+}
+
+.course-row:not(.course-row--head):hover,
+.grading-row:not(.grading-row--head):hover {
+  background: var(--ig-gold-100);
+}
+
+.course-row:not(.course-row--head):focus-within,
+.grading-row:not(.grading-row--head):focus-within {
+  background: #fffdf7;
+  box-shadow: inset 4px 0 0 var(--ig-gold-500);
+}
+
+.course-field {
+  display: block;
+  min-width: 0;
+}
+
+.course-field > span {
+  display: none;
+}
+
+.course-row input,
+.course-row select,
+.grading-row input,
+.grading-row select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #ccd7e4;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ig-ink);
+}
+
+.course-row input:hover,
+.course-row select:hover {
+  border-color: #9fb0c3;
+}
+
+.course-row input:focus,
+.course-row select:focus {
+  border-color: var(--ig-gold-500);
+  box-shadow: 0 0 0 3px rgba(200, 155, 44, .12);
+}
+
+.row-remove,
+.course-delete-button {
+  border-color: #e8c9ce;
+  background: #fff7f8;
+  color: var(--ig-danger);
+}
+
+.row-remove:hover,
+.course-delete-button:hover {
+  border-color: var(--ig-danger);
+  background: #ffedef;
+}
+
+.gpa-table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.gpa-result-rail {
+  position: sticky;
+  top: 96px;
+  display: grid;
+  gap: 14px;
+}
+
+.gpa-result-card,
+.gpa-formula-card {
+  overflow: hidden;
+  border: 1px solid rgba(200, 155, 44, .62);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: var(--ig-shadow-soft);
+}
+
+.gpa-result-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, var(--ig-navy-950), var(--ig-navy-700));
+  color: #fff;
+}
+
+.gpa-result-card__head strong {
+  font-size: 13px;
+}
+
+.gpa-result-card__head span {
+  color: var(--ig-gold-400);
+  font-size: 10px;
+  font-weight: 840;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.gpa-summary-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin: 0;
+  border: 0;
+}
+
+.gpa-summary-strip > span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 0;
+  border-bottom: 1px solid var(--ig-line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ig-copy);
+  font-size: 11px;
+}
+
+.gpa-summary-strip > span:first-child {
+  grid-column: 1 / -1;
+  padding-block: 20px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(221, 185, 92, .18), transparent 9rem),
+    var(--ig-navy-soft);
+}
+
+.gpa-summary-strip > span:nth-child(2) {
+  border-inline-end: 1px solid var(--ig-line);
+}
+
+.gpa-summary-strip b {
+  color: var(--ig-gold-600);
+  font-size: 11px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.gpa-summary-strip strong {
+  color: var(--ig-navy-900);
+  font-size: 21px;
+  line-height: 1.1;
+}
+
+.gpa-summary-strip > span:first-child strong {
+  display: inline-block;
+  margin-top: 3px;
+  color: var(--ig-navy-950);
+  font-size: clamp(42px, 5vw, 58px);
+  letter-spacing: -.05em;
+}
+
+.gpa-result-card .result-box {
+  margin: 0;
+  padding: 0 16px 16px;
+}
+
+.gpa-result-card .result-headline,
+.gpa-result-card .result-meta {
+  display: none;
+}
+
+.gpa-result-card .calculation-breakdown {
+  margin-top: 14px;
+  border-color: var(--ig-line);
+}
+
+.gpa-result-card .calculation-breakdown summary {
+  color: var(--ig-navy-700);
+}
+
+.gpa-result-card .result-learning-links {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.gpa-result-card .result-learning-links a {
+  color: var(--ig-navy-700);
+}
+
+.gpa-formula-card {
+  padding: 16px;
+}
+
+.gpa-formula-card > span {
+  color: var(--ig-gold-600);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.gpa-formula-card strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--ig-navy-900);
+  font-size: 14px;
+}
+
+.gpa-formula-card p {
+  margin: 7px 0 0;
+  color: var(--ig-copy);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* All other structured data tables use the same visual grammar. */
+.record-table-wrap,
+.admin-table-wrap,
+.data-table-wrap,
+.preview-table-wrap {
+  overflow: auto;
+  border: 1px solid #cfd9e5;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--ig-shadow-soft);
+}
+
+.record-table thead,
+.admin-table thead,
+table thead {
+  background: linear-gradient(135deg, var(--ig-navy-950), var(--ig-navy-700));
+  color: #fff;
+}
+
+.record-table th,
+.admin-table th,
+table th {
+  border-color: rgba(221, 185, 92, .48);
+  color: #f2f6fb;
+}
+
+.record-table td,
+.admin-table td,
+table td {
+  border-color: var(--ig-line);
+}
+
+.record-table tbody tr:nth-child(even),
+.admin-table tbody tr:nth-child(even),
+table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.record-table tbody tr:hover,
+.admin-table tbody tr:hover,
+table tbody tr:hover {
+  background: var(--ig-gold-100);
+}
+
+/* Home and supporting cards share the navy/gold system without heavy fills. */
+.home-workflow a,
+.home-tool-card,
+.home-trust-grid article,
+.pro-home-banner {
+  border-color: var(--ig-line);
+  background: rgba(255, 255, 255, .96);
+}
+
+.home-workflow a:hover,
+.home-tool-card:hover {
+  border-color: var(--ig-gold-400);
+  box-shadow: var(--ig-shadow-soft);
+}
+
+.home-workflow a b,
+.home-tool-card > span {
+  border: 1px solid var(--ig-gold-200);
+  background: var(--ig-navy-soft);
+  color: var(--ig-navy-700);
+}
+
+.home-workflow a strong,
+.home-tool-card h3,
+.home-trust-grid h3 {
+  color: var(--ig-navy-900);
+}
+
+.home-workflow i {
+  color: var(--ig-gold-500);
+}
+
+.pro-home-banner {
+  background:
+    radial-gradient(circle at 95% 10%, rgba(221, 185, 92, .2), transparent 16rem),
+    linear-gradient(135deg, var(--ig-navy-950), var(--ig-navy-700));
+}
+
+.pro-home-banner h2,
+.pro-home-banner p,
+.pro-home-banner .section-kicker {
+  color: #fff;
+}
+
+.pro-home-banner .section-kicker {
+  border-color: rgba(221, 185, 92, .44);
+  background: rgba(255, 255, 255, .08);
+}
+
+@media (max-width: 1100px) {
+  .gpa-calculator-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gpa-result-rail {
+    position: static;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, .55fr);
+  }
+}
+
+@media (max-width: 980px) {
+  .home-stage.home-stage--portal {
+    width: 100%;
+  }
+
+  .home-stage--portal .home-setup-panel {
+    width: 100%;
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 760px) {
+  body::before {
+    display: none;
+  }
+
+  .site-header {
+    min-height: 68px;
+  }
+
+  .gpa-entry-workspace {
+    padding: 18px 14px;
+    border-radius: 18px;
+  }
+
+  .gpa-workspace-title {
+    display: grid;
+    gap: 12px;
+  }
+
+  .gpa-live-badge {
+    justify-self: start;
+  }
+
+  .calculator-mode-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .gpa-result-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .course-rows {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .course-row--head {
+    display: none;
+  }
+
+  .course-row:not(.course-row--head),
+  .gpa-entry-workspace .course-row:not(.course-row--head) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 44px;
+    gap: 11px;
+    margin-bottom: 12px;
+    padding: 14px;
+    border: 1px solid var(--ig-line);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: var(--ig-shadow-soft);
+  }
+
+  .course-row:not(.course-row--head):nth-child(odd) {
+    background: #fff;
+  }
+
+  .course-field:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .course-field > span {
+    display: block;
+    margin: 0 0 5px;
+    color: var(--ig-copy);
+    font-size: 10px;
+    font-weight: 780;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+  }
+
+  .course-row .row-remove {
+    align-self: end;
+    min-height: 44px;
+  }
+
+  .gpa-table-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .gpa-table-actions .row-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-setup-panel {
+    padding: 22px 18px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+}
